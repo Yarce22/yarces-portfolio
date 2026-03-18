@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(OLD='max-w-7xl mx-auto px-4 md:px-8 lg:px-16')",
+      "Bash(NEW='max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-28')",
+      "Bash(__NEW_LINE_8987e1b5359015ca__ for:*)",
+      "Bash(do)",
+      "Bash(sed -i \"s|max-w-7xl mx-auto px-4 md:px-8 lg:px-16|max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-28|g\" \"$f\")",
+      "WebFetch(domain:cdn.contentful.com)",
+      "Bash(npm run:*)",
+      "Bash(node:*)"
+    ]
+  }
+}
