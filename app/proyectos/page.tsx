@@ -1,11 +1,9 @@
-import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import ProjectGrid from '@/components/projects/ProjectGrid'
-import ProjectFilters from '@/components/projects/ProjectFilters'
 import { getProjects } from '@/lib/contentful'
 
 export const metadata: Metadata = {
@@ -13,13 +11,8 @@ export const metadata: Metadata = {
   description: 'Todos mis proyectos de desarrollo web, móvil y backend.',
 }
 
-interface ProyectosPageProps {
-  searchParams: Promise<{ category?: string }>
-}
-
-export default async function ProyectosPage({ searchParams }: ProyectosPageProps) {
-  const { category } = await searchParams
-  const projects = await getProjects({ category })
+export default async function ProyectosPage() {
+  const projects = await getProjects()
 
   return (
     <>
@@ -47,13 +40,10 @@ export default async function ProyectosPage({ searchParams }: ProyectosPageProps
           </div>
         </section>
 
-        {/* Filters + Grid */}
+        {/* Grid */}
         <section className="py-16">
-          <div className="max-w-7xl mx-auto w-full flex flex-col gap-10"
+          <div className="max-w-7xl mx-auto w-full"
           style={{ paddingLeft: "var(--page-px)", paddingRight: "var(--page-px)" }}>
-            <Suspense fallback={null}>
-              <ProjectFilters />
-            </Suspense>
             <ProjectGrid projects={projects} />
           </div>
         </section>

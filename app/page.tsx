@@ -11,7 +11,7 @@ import { getTools, getProjects, getCertificates, getSiteConfig } from "@/lib/con
 export default async function Home() {
   const [tools, projects, certificates, siteConfig] = await Promise.all([
     getTools(),
-    getProjects({ limit: 3 }),
+    getProjects({ featured: true }),
     getCertificates({ limit: 3 }),
     getSiteConfig(),
   ]);

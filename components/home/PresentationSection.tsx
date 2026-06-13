@@ -5,8 +5,8 @@ import type { SiteConfig } from '@/lib/contentful-types'
 
 const stats = [
   { value: '3+', label: 'Años de experiencia' },
-  { value: '20+', label: 'Proyectos completados' },
-  { value: '10+', label: 'Clientes satisfechos' },
+  { value: '5', label: 'Proyectos completados' },
+  { value: '5', label: 'Clientes satisfechos' },
 ]
 
 interface PresentationSectionProps {
@@ -62,7 +62,7 @@ export default function PresentationSection({ siteConfig }: PresentationSectionP
             <div className="flex gap-10 md:gap-12 flex-wrap">
               {stats.map(({ value, label }) => (
                 <div key={label} className="flex flex-col gap-1.5">
-                  <span className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] font-[family-name:var(--font-heading)]">
+                  <span className="text-4xl text-center md:text-5xl font-bold text-[var(--color-accent)] font-[family-name:var(--font-heading)]">
                     {value}
                   </span>
                   <span className="text-xs text-[var(--color-text-muted)] font-[family-name:var(--font-display)]">
